@@ -1,0 +1,16 @@
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<a href="/"><- Back</a>
+
+<h1>{{ post.title }}</h1>
+
+<h3>{{ post.summary }}</h3>
+
+<p>{{ post.content }}</p>
+
+<hr>
+{% if post.published %}
+  <p>This post was published at {{ post.created }}</p>
+{% endif %}
