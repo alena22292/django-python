@@ -1,17 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>I am an index page</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="thin center">Recent Posts</h1>
+        </div>
+       {% for post in posts %}
+          <div class="col-md-4">
+              <div class="card">
+                  <div class="card-header" style="background: url({{ post.image.url }})">
+                     <h3 class="post-title"><a href="post/{{ post.slug }}">{{ post.title }}</a></h3>
+                  </div>
+                  <p>{{ post.summary}}</p>
+              </div>
+          </div>
+      {% endfor %}
 
-{% for post in posts %}
-  <div>
-      <h3><a href="post/{{ post.slug }}">{{ post.title }}</a></h3>
-      <p>{{ post.summary}}</p>
   </div>
-{% endfor %}
-{% endblock %}
+</div>
 
 <br />
 <hr>
 <br />
 <a href="about/">About page link --></a>
+
+{% endblock %}
+
