@@ -1,3 +1,7 @@
 body {
   background: #bee5d3 !important;
 }
+
+.container {
+  margin-top: 70px;
+}
